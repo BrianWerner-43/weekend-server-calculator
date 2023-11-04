@@ -81,16 +81,16 @@ function equalsBtn() {
 };
 
 // // Setting up a function getResults to get results from the server via GET route
-// function getResults() {
-//     axios({
-//         method: 'GET',
-//         url: '/calculations'
-//     }).then((response) =>{
+function getResults() {
+    axios({
+        method: 'GET',
+        url: '/calculations'
+    }).then((response) =>{
         
-//         console.log('Testing the GET');
-//     })
+        console.log('Testing the GET');
+    })
 
-// };
+};
 
 
 

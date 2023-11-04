@@ -22,12 +22,12 @@ let calculations = []
 // })
 
 // // POST /calculations
-// app.post('/calculations', (req, res) => {
-//    doMath(req.body)
-//   console.log('POST /calculations is getting request');
-//   console.log('POST /calculations req.body:', req.body);
-//   res.sendStatus(201)
-// });
+app.post('/calculations', (req, res) => {
+   doMath(req.body)
+  console.log('POST /calculations is getting request');
+  console.log('POST /calculations req.body:', req.body);
+  res.sendStatus(201)
+});
 
 // // Function for doing math and pushing into calaculations array
 // function doMath(object) {
