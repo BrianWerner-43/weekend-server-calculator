@@ -54,31 +54,31 @@ function divideBtn() {
    // bundle up the inputs in an object
    // then send the object to the server via Post route
 
-// function equalsBtn() {
-//     let firstNumber = document.getElementById('first-num').value;
-//     let secondNumber = document.getElementById('second-num').value;
-//     document.getElementById('first-num').value = '';
-//     document.getElementById('second-num').value = '';
+function equalsBtn() {
+    let firstNumber = document.getElementById('first-num').value;
+    let secondNumber = document.getElementById('second-num').value;
+    document.getElementById('first-num').value = '';
+    document.getElementById('second-num').value = '';
 
-//      let equals = {
-//             numOne: Number(firstNumber),
-//             numTwo: Number(secondNumber),
-//             operator: operator
+     let equals = {
+            numOne: Number(firstNumber),
+            numTwo: Number(secondNumber),
+            operator: operator
             
             
-//         }
+        }
     
-//     console.log('Testing equalsBtn', equals);
+    console.log('Testing equalsBtn', equals);
 
-//     axios({
-//         method: 'POST',
-//         url: '/calculations',
-//         data: equals
-//     }).then((response) => {
-//         getResults();
-//     })
+    axios({
+        method: 'POST',
+        url: '/calculations',
+        data: equals
+    }).then((response) => {
+        getResults();
+    })
 
-// };
+};
 
 // // Setting up a function getResults to get results from the server via GET route
 // function getResults() {
