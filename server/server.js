@@ -14,12 +14,12 @@ let calculations = []
 // Here's a wonderful place to make some routes:
 
 // GET /calculations 
-// app.get('/calculations', (req, res) => {
-//   console.log('GET/ calculations is getting request');
-//   console.log('GET/ calculations req.body', req.body);
-//   console.log('Expect results', calculations);
-//   res.send(calculations);
-// })
+app.get('/calculations', (req, res) => {
+  console.log('GET/ calculations is getting request');
+  console.log('GET/ calculations req.body', req.body);
+  console.log('Expect results', calculations);
+  res.send(calculations);
+})
 
 // // POST /calculations
 app.post('/calculations', (req, res) => {
@@ -30,23 +30,23 @@ app.post('/calculations', (req, res) => {
 });
 
 // // Function for doing math and pushing into calaculations array
-// function doMath(object) {
-//   if(object.operator === '+') {
-//      object.result = object.numOne + object.numTwo
-//      calculations.push(object);
-//   } else if(object.operator === '-') {
-//     object.result = object.numOne - object.numTwo
-//     calculations.push(object);
-//   } else if(object.operator === '*') {
-//     object.result = object.numOne * object.numTwo
-//     calculations.push(object);
-//   } else if(object.operator === '/') {
-//     object.result = object.numOne / object.numTwo
-//     calculations.push(object);
-//   }
-//   console.log(object);
+function doMath(object) {
+  if(object.operator === '+') {
+     object.result = object.numOne + object.numTwo
+     calculations.push(object);
+  } else if(object.operator === '-') {
+    object.result = object.numOne - object.numTwo
+    calculations.push(object);
+  } else if(object.operator === '*') {
+    object.result = object.numOne * object.numTwo
+    calculations.push(object);
+  } else if(object.operator === '/') {
+    object.result = object.numOne / object.numTwo
+    calculations.push(object);
+  }
+  console.log(object);
+};
 
-// };
 // PLEASE DO NOT MODIFY ANY CODE BELOW THESE BEARS:
 // 🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸
 
