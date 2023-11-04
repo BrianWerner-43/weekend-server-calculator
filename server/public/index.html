@@ -5,19 +5,20 @@
     <title>Server-Side Calculator</title>    
     <script defer src="scripts/axios.js"></script>
     <script defer src="scripts/client.js" charset="utf-8"></script>
+    <link rel="stylesheets" href="style.css">
   </head>
   <body>
     <h1>Server-Side Calculator</h1>
 
-    <form data-testid="calculator">
-      <input placeholder="First Number">
-      <button>+</button>
-      <button>-</button>
-      <button>*</button>
-      <button>/</button>
-      <input placeholder="Second Number">
-      <button>=</button>
-      <button>C</button>
+    <form onsubmit="formSubmit(event)" data-testid="calculator">
+      <input  id="first-num" placeholder="First Number">
+      <button onclick="addBtn()" id="add-btn">+</button>
+      <button onclick="subtractBtn()" id="sub-btn">-</button>
+      <button onclick="multiplyBtn()" id="muliti-btn">*</button>
+      <button onclick="divideBtn()" id="divide-btn">/</button>
+      <input  id="second-num" placeholder="Second Number">
+      <button onclick="equalsBtn()">=</button>
+      <button onclick="clearBtn()">C</button>
     </form>
 
     <section data-testid="recentResult">
