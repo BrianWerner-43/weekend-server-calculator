@@ -1,0 +1,27 @@
+body {
+    background-color: aqua;
+}
+
+.head {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.head p {
+    font-style: italic;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.input1 {
+    background-color: cornsilk;
+    border-radius: 5px;
+}
+
+.input2 {
+    background-color: cornsilk;
+    border-radius: 5px;
+}
+
+.clear-btn {
+    background-color: red;
+}

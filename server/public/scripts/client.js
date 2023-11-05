@@ -5,12 +5,12 @@ function formSubmit(event) {
 
 };
 
-function clearBtn(){
-    document.getElementById('first-num').value = '';
-    document.getElementById('second-num').value = '';
-    // When first number is enetered we want the input to claer
-    // after the equals or clear button is clicked
-};
+// function clearBtn(){
+//     document.getElementById('first-num').value = '';
+//     document.getElementById('second-num').value = '';
+//     // When first number is enetered we want the input to claer
+//     // after the equals or clear button is clicked
+// };
 
 // Creating a function for the addBtn so when clicked it will capture the user wants to use the add operator
  let operator = '';
@@ -120,14 +120,19 @@ function renderResults(results) {
         let lastResult = results.slice(-1);
         recentResult.innerHTML += `
         <h2>${lastResult[0].result}</h2>`
-        console.log('testing the rnder', lastResult, results);
+        console.log('testing the render', lastResult, results);
     
 
 };
 
 
-
-
+// When first number is enetered we want the input to claer
+    // after the equals or clear button is clicked
+function clearBtn(){
+    document.getElementById('first-num').value = '';
+    document.getElementById('second-num').value = '';
+    
+};
 
 
 
