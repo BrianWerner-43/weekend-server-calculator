@@ -5,15 +5,12 @@ function formSubmit(event) {
 
 };
 
-// function clearBtn(){
-//     document.getElementById('first-num').value = '';
-//     document.getElementById('second-num').value = '';
-//     // When first number is enetered we want the input to claer
-//     // after the equals or clear button is clicked
-// };
+// Setting a global variable
+let operator = '';
 
-// Creating a function for the addBtn so when clicked it will capture the user wants to use the add operator
- let operator = '';
+
+// This function will cature the add operator
+// when clicked
 function addBtn() {
     operator = '+';
   console.log(operator);
@@ -22,7 +19,8 @@ function addBtn() {
  
 };
 
-// This function will subtract
+// This function will cature the subtract operator
+// when clicked
 function subtractBtn() {
     operator = '-';
   console.log(operator);
@@ -31,7 +29,8 @@ function subtractBtn() {
  
 };
 
-//This function will multiply
+//This function will cature the multiply operator
+// when clicked
 function multiplyBtn() {
     operator = '*';
   console.log(operator);
@@ -40,7 +39,8 @@ function multiplyBtn() {
  
 };
 
-// This function will divide
+/// This function will cature the divide operator
+// when clicked
 function divideBtn() {
     operator = '/';
   console.log(operator);
@@ -49,8 +49,8 @@ function divideBtn() {
  
 };
 
-//  equal button Capture numbers from the inputs to send to the server
-   // within the equal button should cature the value from the inputs
+// The equal button Captures the numbers from the inputs to send to the server
+   // within the equal button it should cature the value from the inputs
    // bundle up the inputs in an object
    // then send the object to the server via Post route
 
@@ -77,7 +77,10 @@ function equalsBtn() {
     }).then((response) => {
         getResults();
         console.log('response.data',response.data)
-        
+        // alert function for inputs    
+    }).catch(function(error) {
+        alert('You must enter a number, that is the way 📟');
+        console.log('Testing alert function', error);
     })
    
 };
@@ -90,7 +93,10 @@ function getResults() {
     }).then((response) =>{
         console.log('response.data:', response.data);
         renderResults(response.data)
-       
+         // alert function for inputs  
+     }).catch(function(error) {
+        alert('You must enter a number, that is the way 📟');
+        console.log('Testing alert function', error);
     })
 
 };
@@ -99,13 +105,14 @@ getResults();
 
 
 // Set up render function to diplay the most recent result with a <h2> and history with <li>
-    //Use a loop with [array.length - 1]
 
 function renderResults(results) {
     console.log(results);
     let resultHistory = document.getElementById('resultHistory');
     console.log(resultHistory);
     resultHistory.innerHTML = '';
+    
+    // Looping through results history
     for(let i = 0; i < results.length; i++) {
         resultHistory.innerHTML += `
 

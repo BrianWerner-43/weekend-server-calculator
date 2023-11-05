@@ -21,7 +21,7 @@ app.get('/calculations', (req, res) => {
   res.send(calculations);
 })
 console.log('Expect results', calculations);
-//another GET request for 
+
 
 // // POST /calculations
 app.post('/calculations', (req, res) => {
@@ -32,7 +32,7 @@ app.post('/calculations', (req, res) => {
   res.sendStatus(201)
 });
 
-// // Function for doing math and pushing into calaculations array
+ // Function for doing math and pushing into calaculations array
 function doMath(object) {
   if(object.operator === '+') {
      object.result = Number(object.numOne) + Number(object.numTwo)
@@ -47,7 +47,7 @@ function doMath(object) {
     object.result = Number(object.numOne) / Number(object.numTwo)
     calculations.push(object);
   }
-  console.log(object);
+  console.log('Expecting our objects:', object);
 };
 
 // PLEASE DO NOT MODIFY ANY CODE BELOW THESE BEARS:
