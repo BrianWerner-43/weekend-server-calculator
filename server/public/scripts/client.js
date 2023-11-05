@@ -66,9 +66,9 @@ function equalsBtn() {
             operator: operator
             
             
-        }
+        };
     
-    console.log('Testing equalsBtn', equals);
+        console.log('Testing equalsBtn', equals);
 
     axios({
         method: 'POST',
@@ -76,21 +76,56 @@ function equalsBtn() {
         data: equals
     }).then((response) => {
         getResults();
+        console.log('response.data',response.data)
+        
     })
-
+   
 };
 
-// // Setting up a function getResults to get results from the server via GET route
+ // Setting up a function getResults to get results from the server via GET route
 function getResults() {
     axios({
         method: 'GET',
         url: '/calculations'
     }).then((response) =>{
-        
-        console.log('Testing the GET');
+        console.log('response.data:', response.data);
+        renderResults(response.data)
+       
     })
 
 };
+
+getResults();
+
+
+// Set up render function to diplay the most recent result with a <h2> and history with <li>
+    //Use a loop with [array.length - 1]
+
+function renderResults(results) {
+    console.log(results);
+    let resultHistory = document.getElementById('resultHistory');
+    console.log(resultHistory);
+    resultHistory.innerHTML = '';
+    for(let i = 0; i < results.length; i++) {
+        resultHistory.innerHTML += `
+
+        <li>${results[i].numOne}
+        ${results[i].operator}
+        ${results[i].numTwo} =
+        ${results[i].result}</li>
+        `;
+    }
+        let recentResult = document.getElementById('recentResult');
+        recentResult.innerHTML = '';
+        let lastResult = results.slice(-1);
+        recentResult.innerHTML += `
+        <h2>${lastResult[0].result}</h2>`
+        console.log('testing the rnder', lastResult, results);
+    
+
+};
+
+
 
 
 

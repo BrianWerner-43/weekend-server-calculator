@@ -11,21 +11,24 @@
     <h1>Server-Side Calculator</h1>
 
     <form onsubmit="formSubmit(event)" data-testid="calculator">
-      <input  id="first-num" placeholder="First Number">
+      <input type="number" id="first-num" placeholder="First Number">
       <button onclick="addBtn()" id="add-btn">+</button>
       <button onclick="subtractBtn()" id="sub-btn">-</button>
       <button onclick="multiplyBtn()" id="muliti-btn">*</button>
       <button onclick="divideBtn()" id="divide-btn">/</button>
-      <input  id="second-num" placeholder="Second Number">
+      <input type="number" id="second-num" placeholder="Second Number">
       <button onclick="equalsBtn()">=</button>
       <button onclick="clearBtn()">C</button>
     </form>
 
-    <section data-testid="recentResult">
+    <section id="recentResult" data-testid="recentResult">
+      
       <!-- The most recent calculation result goes here. -->
     </section>
 
-    <section data-testid="resultHistory">
+    <section id="resultHistory" data-testid="resultHistory">
+     
+      
       <!-- The list of calculation results goes here. -->
     </section>
   </body>

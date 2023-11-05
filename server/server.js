@@ -7,7 +7,8 @@ app.use(express.static('server/public'));
 
 // Global variable that will contain all of the
 // calculation objects:
-let calculations = []
+let calculations = [];
+
 
 
 
@@ -17,31 +18,33 @@ let calculations = []
 app.get('/calculations', (req, res) => {
   console.log('GET/ calculations is getting request');
   console.log('GET/ calculations req.body', req.body);
-  console.log('Expect results', calculations);
   res.send(calculations);
 })
+console.log('Expect results', calculations);
+//another GET request for 
 
 // // POST /calculations
 app.post('/calculations', (req, res) => {
    doMath(req.body)
   console.log('POST /calculations is getting request');
   console.log('POST /calculations req.body:', req.body);
+  
   res.sendStatus(201)
 });
 
 // // Function for doing math and pushing into calaculations array
 function doMath(object) {
   if(object.operator === '+') {
-     object.result = object.numOne + object.numTwo
+     object.result = Number(object.numOne) + Number(object.numTwo)
      calculations.push(object);
   } else if(object.operator === '-') {
-    object.result = object.numOne - object.numTwo
+    object.result = Number(object.numOne) - Number(object.numTwo)
     calculations.push(object);
   } else if(object.operator === '*') {
-    object.result = object.numOne * object.numTwo
+    object.result = Number(object.numOne) * Number(object.numTwo)
     calculations.push(object);
   } else if(object.operator === '/') {
-    object.result = object.numOne / object.numTwo
+    object.result = Number(object.numOne) / Number(object.numTwo)
     calculations.push(object);
   }
   console.log(object);
